@@ -23,7 +23,8 @@ Console Client you're most welcome!
 - [Usage](https://github.com/sergeyklay/pcloud-console-client/blob/master/docs/Usage.md)
 
 Super fast Compile and Install
-```sudo apt install \
+```sh
+sudo apt install \
     cmake \
     fuse \
     g++ \
