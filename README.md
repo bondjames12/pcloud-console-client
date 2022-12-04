@@ -22,6 +22,42 @@ Console Client you're most welcome!
 - [Getting Started](https://github.com/sergeyklay/pcloud-console-client/blob/master/docs/GettingStarted.md)
 - [Usage](https://github.com/sergeyklay/pcloud-console-client/blob/master/docs/Usage.md)
 
+Super fast Compile and Install
+sudo apt install \
+    cmake \
+    fuse \
+    g++ \
+    gcc \
+    git \
+    libfuse-dev \
+    libmbedtls-dev \
+    libpthread-stubs0-dev \
+    libsqlite3-dev \
+    make \
+    pkg-config \
+    zlib1g-dev
+git clone https://github.com/bondjames12/pcloud-console-client.git
+cd pcloud-console-client
+git submodule init
+git submodule update
+mkdir build
+
+cd build
+
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DPCLOUD_WITH_SYSTEMD=ON \
+  -DPCLOUD_SYSTEMD_SERVICES_INSTALL_DIR==~/.config/systemd/user \
+  ..
+
+
+cmake --build . --config Release
+sudo cmake --build . --target install
+
+pcloudcc -u <email> -p -s
+systemctl enable pcloudcc@<email>.service
+systemctl start pcloudcc@<email>.service
+systemctl status pcloudcc@<email>.service
 ## License
 
 pCloud Console Client is open source software licensed under the
