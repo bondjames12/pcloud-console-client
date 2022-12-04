@@ -23,7 +23,7 @@ Console Client you're most welcome!
 - [Usage](https://github.com/sergeyklay/pcloud-console-client/blob/master/docs/Usage.md)
 
 Super fast Compile and Install
-sudo apt install \
+```sudo apt install \
     cmake \
     fuse \
     g++ \
@@ -58,6 +58,7 @@ pcloudcc -u <email> -p -s
 systemctl enable pcloudcc@<email>.service
 systemctl start pcloudcc@<email>.service
 systemctl status pcloudcc@<email>.service
+```
 ## License
 
 pCloud Console Client is open source software licensed under the
